@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  
+  <Staff>
+    <!-- 列表欄位 -->
+    <ColumnList>
+      <Column Id="WorkId" Name="員工編號" Property="WorkId" Control="txtWorkId" CustomizeRule="" CustomizeValue="" />
+      <Column Id="Identity" Name="身分" Property="Identity" Control="cbIdentity" CustomizeRule="IIF" CustomizeValue="|^0$|雇主|勞工|" />
+      <Column Id="Name" Name="姓名" Property="Name" Control="txtName" CustomizeRule="" CustomizeValue="" />
+      <Column Id="Position" Name="職稱" Property="Position" Control="txtPosition" CustomizeRule="" CustomizeValue="" />
+      <Column Id="BankAccount" Name="銀戶" Property="BankAccount" Control="txtBankAccount" CustomizeRule="" CustomizeValue="" />
+      <Column Id="Wage" Name="薪資" Property="Wage" Control="txtWage" CustomizeRule="" CustomizeValue="" />
+      <Column Id="Pension" Name="勞退金(自願提撥率)" Property="Pension" Control="txtPension" CustomizeRule="Mathematics" CustomizeValue="|#Pension#|100|*" />
+      <Column Id="OnBoard" Name="到職日" Property="OnBoard" Control="dtpOnBoard" CustomizeRule="" CustomizeValue="" />
+      <Column Id="Resignation" Name="離職日" Property="Resignation" Control="dtpResignation" CustomizeRule="" CustomizeValue="" />
+      <Column Id="Email" Name="Email" Property="Email" Control="txtEmail" CustomizeRule="" CustomizeValue="" />
+    </ColumnList>
+  </Staff>
+
+  <Wage>
+    <!-- 列表欄位 -->
+    <ColumnList>
+      <Column Id="WorkId" Name="員工編號" Property="Staff.WorkId" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="Identity" Name="身分" Property="Staff.Identity" Control="" CustomizeRule="IIF" CustomizeValue="|^0$|雇主|勞工|" />
+      <Column Id="Name" Name="姓名" Property="Staff.Name" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="Position" Name="職稱" Property="Staff.Position" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="BankAccount" Name="銀行帳號" Property="Staff.BankAccount" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="BasicWage" Name="本薪" Property="BasicWage" Control="" CustomizeRule="Mathematics" CustomizeValue="|#Staff.Wage#|0.75|*|" />
+      <Column Id="AdditionWage" Name="職務加給" Property="AdditionWage" Control="" CustomizeRule="Mathematics" CustomizeValue="|#Staff.Wage#|0.25|*|" />
+      <Column Id="BoardExpenses" Name="伙食費" Property="BoardExpenses" Control="" CustomizeRule="Regular" CustomizeValue="2400" />
+      <Column Id="Wage" Name="薪資合計" Property="Staff.Wage" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="加班費" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="超時加班" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="假日加班" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="休息日一般加班" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="休息日超時加班" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="休息日超時加班加給本薪" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="特休轉薪資" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="誤餐費" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="代支費用" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="勞健保" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="所得稅" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="PensionByFirm" Name="勞退金(公司提撥)" Property="PensionByFirm" Control="" CustomizeRule="Mathematics" CustomizeValue="|#Staff.Wage#|0.06|*|" />
+      <Column Id="Pension" Name="勞退金(自願提撥率)" Property="Staff.Pension" Control="" CustomizeRule="Mathematics" CustomizeValue="|#Staff.Pension#|100|*|" />
+      <Column Id="PensionIndividual" Name="勞退金(自願提撥)" Property="PensionIndividual" Control="" CustomizeRule="Mathematics" CustomizeValue="|#Staff.Wage#|#Staff.Pension#|*|" />
+      <Column Id="" Name="扣假" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="薪資實領金額" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="一般加班時數" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="超時加班時數" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="假日加班時數" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="休息日一般加班" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="休息日超時加班" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="休息日超時加班加給本薪" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="AnnualLeave" Name="特休剩餘時數" Property="AnnualLeave" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="PersonalLeave" Name="事假時數" Property="PersonalLeave" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="SickLeave" Name="病假時數" Property="SickLeave" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="" Name="應稅加班費" Property="" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="Reimbursement" Name="代支費用" Property="Reimbursement" Control="" CustomizeRule="" CustomizeValue="" />
+      <Column Id="Totle" Name="匯入帳戶金額" Property="Totle" Control="" CustomizeRule="" CustomizeValue="" />
+    </ColumnList>
+  </Wage>
+
+  <Attendance>
+    <!-- 列表欄位 -->
+    <ColumnList>
+    </ColumnList>
+  </Attendance>
+
+  <WorkOvertime>
+    <!-- 列表欄位 -->
+    <ColumnList>
+    </ColumnList>
+  </WorkOvertime>
+
+  <Vacation>
+    <!-- 列表欄位 -->
+    <ColumnList>
+    </ColumnList>
+  </Vacation>
+
+
+  <FormatList>
+    <Format Id="Identity" Name="" Rule="IIF" Value="|^0$|雇主|勞工|"/>
+    <Format Id="ListFormGroup" Name="" Rule="List" Value="|ListFormGroup|"/>
+    <Format Id="ListStartCode" Name="" Rule="List" Value="|ListStartCode|"/>
+    <Format Id="Priority" Name="" Rule="IIF" Value="|^1$|急件|一般|"/>
+    <Format Id="ListHostType" Name="" Rule="List" Value="|ListHostType|"/>
+    <Format Id="ListFormCode" Name="" Rule="List" Value="|ListFormCode|"/>
+  </FormatList>
+  
+</Settings>
